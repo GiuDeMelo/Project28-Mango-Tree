@@ -1,39 +1,31 @@
-class Laucher{
-  constructor(bodyP,x,y){
-    var options = {
-      bodyP: bodyP,
-      point: point,
-      stiffness: 0.08,
-      length: 4
+class Launcher{
+  constructor(body,anchor){
+    var options={ bodyA:body,      
+      pointB:anchor,
+      stiffness:0.004,
+      length:1
     }
-    this.point = point;
-    this.launcher = Constraint.create(options);
-    World.add(world,this.sling);
+    this.bodyA=body
+    this.pointB=anchor
+    this.launcher=Constraint.create(options)
+    World.add(world,this.launcher)
   }
-
+ 
   attach(body){
-    this.launcher.bodyP = body;
+    this.launcher.bodyA=body;
   }
-
+ 
   fly(){
-    this.launcher.bodyP = null;
-  } 
-
+    this.launcher.bodyA=null;
+  }
+ 
   display(){
-    if(this.launcher.bodyP){
-      var pointA = this.launcher.bodyP.position;
-      var pointB = this.point;
-
-      if(pointA.x < 200){
-        line(pointA.x-20,pointA.y, pointB.x-10,pointB.y);
-        line(pointA.x-20,pointA.y, pointB.x+20,pointB.y);
-       }
-
-       else{
-        line(pointA.x-20,pointA.y, pointB.x-10,pointB.y);
-        line(pointA.x-20,pointA.y, pointB.x+20,pointB.y);
-      }
+    if(this.launcher.bodyA){
+      var pointA=this.bodyA.position;
+      var pointB=this.pointB
+ 
+      strokeWeight(2);    
+      line(pointA.x,pointA.y,pointB.x,pointB.y);
     }
- }
-
+  }
 }
