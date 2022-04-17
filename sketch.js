@@ -26,7 +26,7 @@ function setup() {
 	stoneObj=new Stone(235,420,30); 
 
 	mango1=new Mango(1100,100,30);
-  mango2=new Mango(1170,130,30);
+        mango2=new Mango(1170,130,30);
 	mango3=new Mango(1010,140,30);
 	mango4=new Mango(1000,70,30);
 	mango5=new Mango(1100,70,30);
@@ -77,18 +77,18 @@ function draw() {
 
   launcherObject.display();
 
-  detectollision(stoneObj,mango1);
-  detectollision(stoneObj,mango2);
-  detectollision(stoneObj,mango3);
-  detectollision(stoneObj,mango4);
-  detectollision(stoneObj,mango5);
-  detectollision(stoneObj,mango6);
-  detectollision(stoneObj,mango7);
-  detectollision(stoneObj,mango8);
-  detectollision(stoneObj,mango9);
-  detectollision(stoneObj,mango10);
-  detectollision(stoneObj,mango11);
-  detectollision(stoneObj,mango12);
+  detectCollision(stoneObj,mango1);
+  detectCollision(stoneObj,mango2);
+  detectCollision(stoneObj,mango3);
+  detectCollision(stoneObj,mango4);
+  detectCollision(stoneObj,mango5);
+  detectCollision(stoneObj,mango6);
+  detectCollision(stoneObj,mango7);
+  detectCollision(stoneObj,mango8);
+  detectCollision(stoneObj,mango9);
+  detectCollision(stoneObj,mango10);
+  detectCollision(stoneObj,mango11);
+  detectCollision(stoneObj,mango12);
 }
 
 //create mouseDragged function here
