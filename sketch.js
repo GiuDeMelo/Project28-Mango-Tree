@@ -99,7 +99,7 @@ function draw() {
 
 //keyPressed function
  function keyPressed(){
-   if(keycode === 32){
+   if(keyCode === 32){
      Matter.Body.setPosition(stoneObj.body,{x:235,y:420});
      launcherObject.attach(stoneObj.body);
    }
