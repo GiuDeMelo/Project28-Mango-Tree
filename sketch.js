@@ -39,15 +39,11 @@ function setup() {
 	mango12=new Mango(900,160,40);
 
 	treeObj=new Tree(1050,580);
-
 	groundObject=new Ground(width/2,600,width,20);
-
-  launcherObject = new Laucher(stoneObj.body,{x:235,y:420});
-
+        launcherObject = new Launcher(stoneObj.body,{x:235,y:420});
 
 	Engine.run(engine);
 }
-
 ///////////////////////////////////////////
 function draw() {
 
@@ -55,7 +51,6 @@ function draw() {
   textSize(25);
   text("Press Space to get a second Chance to Play!!",50 ,50);
   image(boy ,200,340,200,300);
-  
 
   treeObj.display();
   stoneObj.display();
@@ -74,7 +69,6 @@ function draw() {
 
   stoneObj.display();
   groundObject.display();
-
   launcherObject.display();
 
   detectCollision(stoneObj,mango1);
@@ -112,8 +106,7 @@ function draw() {
   stoneBodyPosition=lstone.body.position
   
   var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-  	if(distance<=lmango.r+lstone.r)
-    {
+  	if(distance<=lmango.r+lstone.r){
   	  Matter.Body.setStatic(lmango.body,false);
     }
 
