@@ -1,4 +1,3 @@
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -16,7 +15,7 @@ var launchForce = 100;
 ///////////////////////////////////////////
 function preload(){
 	boy=loadImage("images/boy.png");
-  }
+}
 
 function setup() {
 	createCanvas(1300, 600);
@@ -26,7 +25,7 @@ function setup() {
 	stoneObj=new Stone(235,420,30); 
 
 	mango1=new Mango(1100,100,30);
-        mango2=new Mango(1170,130,30);
+  mango2=new Mango(1170,130,30);
 	mango3=new Mango(1010,140,30);
 	mango4=new Mango(1000,70,30);
 	mango5=new Mango(1100,70,30);
@@ -40,7 +39,7 @@ function setup() {
 
 	treeObj=new Tree(1050,580);
 	groundObject=new Ground(width/2,600,width,20);
-        launcherObject = new Launcher(stoneObj.body,{x:235,y:420});
+  launcherObject = new Launcher(stoneObj.body,{x:235,y:420});
 
 	Engine.run(engine);
 }
@@ -101,13 +100,11 @@ function draw() {
 
 //detectCollision function
   function detectCollision(lstone,lmango){
-
-  mangoBodyPosition=lmango.body.position
-  stoneBodyPosition=lstone.body.position
+    mangoBodyPosition=lmango.body.position
+    stoneBodyPosition=lstone.body.position
   
-  var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
+    var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
   	if(distance<=lmango.r+lstone.r){
   	  Matter.Body.setStatic(lmango.body,false);
     }
-
   }
