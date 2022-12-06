@@ -14,7 +14,7 @@ var launchForce = 100;
 
 ///////////////////////////////////////////
 function preload(){
-	boy=loadImage("images/boy.png");
+	boy=loadImage("boy.png");
 }
 
 function setup() {
@@ -84,11 +84,15 @@ function draw() {
   detectCollision(stoneObj,mango12);
 }
 
-//create mouseDragged function here
+//mouseDragged function
+function mouseDragged(){
+  Matter.Body.setPosition(stone.body, {x: mouseX , y: mouseY});
+}
 
-
-//create mouseReleased function here
-
+//mouseReleased function
+function mouseReleased(){
+  launcher.fly();
+}
 
 //keyPressed function
  function keyPressed(){
